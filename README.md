@@ -10,13 +10,14 @@ dd bs=512 if=path/to/ubuntu.iso of=/dev/sd? status=progress  # where ? is the us
 
 - Configure system and install packages:
 
+```bash
     wget -O - https://goo.gl/vfrSsM | bash
+```
 
 - Log out and log back in for group assignments & user settings to take effect
 
-- Install dotfiles & clone repos:
+- Install dotfiles
 
-```
+```bash
 curl https://goo.gl/M7D56t | bash
 ```
-# ubuntuInstall
