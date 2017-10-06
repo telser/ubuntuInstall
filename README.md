@@ -19,5 +19,5 @@ dd bs=512 if=path/to/ubuntu.iso of=/dev/sd? status=progress  # where ? is the us
 - Install dotfiles
 
 ```bash
-curl https://goo.gl/M7D56t | bash
+curl https://goo.gl/r7ZcNj | bash
 ```
