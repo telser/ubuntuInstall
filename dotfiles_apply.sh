@@ -2,6 +2,7 @@
 rm -rf ~/dotfiles
 git clone https://github.com/drewboardman/dotfiles.git \
   ~/dotfiles
+cat ~/dotfiles/fonts.sh
 sh ~/dotfiles/install.sh
 
 # Vim setup (seems to kill the script, so do it last)
