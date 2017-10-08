@@ -15,14 +15,12 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install \
     ncurses-term \
     i3 \
     synaptic \
-    firefox \
     evince \
     xchm \
     build-essential \
     mosh \
 \
     ruby-full \
-    ri \
 \
     curl \
     git \
@@ -32,16 +30,10 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install \
     tmux \
     openssh-server \
 \
-    gtypist \
     mesa-utils \
-    feh \
-    eog \
-    imagemagick \
-    imagemagick-doc \
 \
     openjdk-8-jdk \
 \
-    gawk \
     libssl-dev \
     libyaml-dev \
     libsqlite3-dev \
@@ -50,15 +42,15 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install \
     libncurses5-dev \
     automake \
     libtool \
-    bison \
     pkg-config \
 \
     libmysqlclient-dev \
     xfonts-75dpi \
     libreadline6-dev \
     libffi-dev \
-    python3-pip \
 \
     stow \
     chromium-browser \
     xvfb \
+    openvpn \
+    openconnect \

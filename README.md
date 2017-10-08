@@ -21,3 +21,27 @@ dd bs=512 if=path/to/ubuntu.iso of=/dev/sd? status=progress  # where ? is the us
 ```bash
 curl https://goo.gl/r7ZcNj | bash
 ```
+
+#### Increasing audio fidelity
+  - open the pulseaudio daemon conf `sudo vim /etc/pulse/daemon.conf`
+  - uncomment (by deleting `;` and change the following lines:
+
+```
+resample-method = src-sinc-medium-quality
+default-sample-format = s24le
+default-sample-rate = 48000
+```
+  
+  - restart pulseaudio
+
+```
+pulseaudio -k
+pulseaudio --start
+```
+
+  - check that it worked
+
+```
+pacmd list-sinks | grep sample
+=> sample spec: s32le 2ch 44100Hz
+```
