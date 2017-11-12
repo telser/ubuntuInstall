@@ -54,3 +54,4 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install \
     xvfb \
     openvpn \
     openconnect \
+    tree \
