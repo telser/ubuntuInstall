@@ -55,3 +55,5 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install \
     openvpn \
     openconnect \
     tree \
+    arandr\
+    feh\
