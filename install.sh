@@ -9,6 +9,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install \
     vim-doc \
     vim-gtk \
     alsa-utils \
+    pavucontrol \
 \
     xorg \
     rxvt-unicode-256color \

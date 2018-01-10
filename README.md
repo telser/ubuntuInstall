@@ -23,6 +23,9 @@ curl https://goo.gl/r7ZcNj | bash
 ```
 
 #### Increasing audio fidelity
+*NOTE*: These are automatically added by this install script. If you wish to change them or remove them, this info is helpful. You should keep them
+though, for the sweet sweet fidelity.
+
   - open the pulseaudio daemon conf `sudo vim /etc/pulse/daemon.conf`
   - uncomment (by deleting `;` and change the following lines:
 
@@ -47,7 +50,7 @@ pacmd list-sinks | grep sample
 ```
 
 #### TODO
-- install `atom-dark` and color schemes
-- fix dotfile install script
-- pavucontrol
+- oh my zsh
+- git setup
+- add yourself to sudoers
 - intellij
