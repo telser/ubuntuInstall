@@ -19,6 +19,9 @@ echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
 mkdir -p ~/tmp
 mkdir -p ~/bin
 
+# Hansolo
+cp hansolo.jpg ~/Downloads
+
 # Install rbenv and newest ruby
 rm -fr ~/.rbenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
