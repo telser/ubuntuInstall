@@ -18,7 +18,7 @@ dd bs=512 if=path/to/ubuntu.iso of=/dev/sd? status=progress  # where ? is the us
 
 - Log out and log back in for group assignments & user settings to take effect
 
-# Additional
+## Optional Steps
 
 #### Change font to Adobe Source Code Pro
 - in you `gnome-terminal` you should change the font to Adobe Source Code Pro Medium 11
@@ -53,3 +53,4 @@ pacmd list-sinks | grep sample
 
 #### TODO
 - intellij
+- scala

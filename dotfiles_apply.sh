@@ -13,10 +13,12 @@ rm ~/.zshrc
 #install dotfiles
 sh ~/dotfiles/install.sh
 
-# Vim setup (seems to kill the script, so do it last)
+# Vim colorscheme
 cd ~/.vim
 mkdir colors
 cd colors
 wget https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom-dark-256.vim
+
+# Vim setup (seems to kill the script, so do it last)
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
