@@ -1,22 +1,28 @@
+#! /bin/bash
+
+# Make sure system up to date
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # install packages
-wget -O - http://github.ove.local/raw/SellerTools/ubuntu-workstation/master/install.sh | sudo bash
+/bin/bash packages.sh
 
 # setup user
-sudo chsh -s /usr/bin/zsh drew
-sudo usermod -a -G audio,video,netdev drew
+USER=`whoami`
+sudo chsh -s /usr/bin/zsh $USER
+sudo usermod -a -G audio,video,netdev $USER
 
-mkdir -p ~/Downloads
+# This disables the need to enter password for sudo'ing
+echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
+
+# I like having this
 mkdir -p ~/tmp
 
+# Install rbenv
 rm -fr ~/.rbenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git \
     ~/.rbenv/plugins/ruby-build
 
-# Install dbeaver
-cd ~
-curl -L http://dbeaver.jkiss.org/files/dbeaver-ce_latest_amd64.deb > ~/Downloads/dbeaver.deb
-sudo dpkg -i ~/Downloads/dbeaver.deb
+# symlink all dotfiles
+/bin/bash dotfiles_apply.sh
