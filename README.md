@@ -45,3 +45,9 @@ pulseaudio --start
 pacmd list-sinks | grep sample
 => sample spec: s32le 2ch 44100Hz
 ```
+
+#### TODO
+- install `atom-dark` and color schemes
+- fix dotfile install script
+- pavucontrol
+- intellij
