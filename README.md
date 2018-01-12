@@ -51,6 +51,28 @@ pacmd list-sinks | grep sample
 => sample spec: s32le 2ch 44100Hz
 ```
 
+#### Connecting to a VPN
+
+#### `openvpn` (for work)
+
+Copy the relevent ovpn and cert files into `/etc/openvpn`.
+For instance, here is my dir:
+
+```
+-rw-r--r--   1 root root  916 Jan 12 09:01 drew-boardman.key
+-rw-r--r--   1 root root  729 Jan 12 09:01 drew-boardman.csr
+-rw-r--r--   1 root root 3.8K Jan 12 09:01 drew-boardman.crt
+-rw-r--r--   1 root root  122 Jan 12 09:01 work.ovpn
+-rw-r--r--   1 root root 1.3K Jan 12 09:01 ca.crt
+```
+
+Then connect to the vpn with
+
+```
+cd /etc/openvpn && sudo openvpn --config /etc/openvpn/work.ovpn
+```
+
+#### PIA
 #### TODO
 - intellij
 - scala
