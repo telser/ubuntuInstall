@@ -51,6 +51,27 @@ pacmd list-sinks | grep sample
 => sample spec: s32le 2ch 44100Hz
 ```
 
+#### Adding another hard drive
+
+```
+sudo mkdir /media/hdd
+sudo mount /dev/sdb1 /media/hdd
+sudo chown drew:drew /media/hdd
+```
+
+Now you want to add it to the `/etc/fstab` file.
+
+Get the UUID with `lsblk -f`
+
+Now add the following line to the bottom of the `fstab`
+
+```
+sudo vim /etc/fstab
+
+# add this
+UUID=<myuuid> /media/hdd ext4    defaults    0    0
+```
+
 #### Connecting to a VPN
 
 #### `openvpn` (for work)
