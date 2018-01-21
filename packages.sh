@@ -57,4 +57,5 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install \
     openconnect \
     tree \
     arandr\
-    feh\
+    feh \
+    network-manager-openvpn-gnome \

@@ -94,6 +94,27 @@ cd /etc/openvpn && sudo openvpn --config /etc/openvpn/work.ovpn
 ```
 
 #### PIA
+These are instructions to set up PIA to autoconnect using NetworkManager GUI.
+
+```
+wget https://www.privateinternetaccess.com/installer/pia-nm.sh
+sudo bash pia-nm.sh
+```
+
+Now open the `nm-connection-manager` either by clicking `nm-applet` in the
+bottom right, or just running `nm-connection-manager`.
+
+Double click on *US-East* (or wherever you want to proxy), and click
+*Advanced*->*General*.
+
+Under "Set virtual device type" select `TUN` and name is `tun1` (this is the
+config that `.i3status.conf` is looking for.
+
+Now go back and double click the "wired ethernet" or whatever your default
+connection is.
+
+Under *General* just select the VPN proxy you configured.
+
 #### TODO
 - intellij
 - scala
