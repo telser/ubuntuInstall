@@ -3,12 +3,12 @@ rm -rf ~/dotfiles
 git clone -b laptop https://github.com/drewboardman/dotfiles.git \
   ~/dotfiles
 
-# Get adobe source code pro
-sh ~/dotfiles/fonts.sh
-
 # install oh-my-zsh before you symlink zshrc
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 rm ~/.zshrc
+
+# Get adobe source code pro
+sh ~/dotfiles/fonts.sh
 
 #install dotfiles
 sh ~/dotfiles/install.sh
