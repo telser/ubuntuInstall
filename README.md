@@ -115,6 +115,33 @@ connection is.
 
 Under *General* just select the VPN proxy you configured.
 
+#### Screen brightness controls
+You're going to get errors about how xbacklight can't find inputs that allow brightness controls.
+
+You need to do 2 things:
+
+1. `sudo find /sys/ -type f -iname '*brightness*'`
+
+The output should give you something like this:
+
+`/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-LVDS-1/intel_backlight/brightness`
+
+symlink this
+
+`sudo ln -s /sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-LVDS-1/intel_backlight  /sys/class/backlight
+`
+
+2. Make `/etc/X11/xorg.conf` and inside put the following (where you path is replaced with the correct one):
+
+```
+Section "Device"
+  Identifier  "Card0"
+  Driver      "intel"
+  Option      "Backlight"  "/sys/class/backlight/intel_backlight"
+  EndSection
+```
+
+
 #### TODO
 - intellij
 - scala
