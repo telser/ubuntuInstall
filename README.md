@@ -10,6 +10,9 @@ dd bs=512 if=path/to/ubuntu.iso of=/dev/sd? status=progress  # where ? is the us
 - Timezone New York
 
 ## Step 2
+- If you have an nvidia GPU, you'll need to [install the latest
+  drivers](http://www.linuxandubuntu.com/home/how-to-install-latest-nvidia-drivers-in-linux) before you install i3wm.
+
 - Configure system and install packages:
 
 ```bash

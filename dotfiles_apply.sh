@@ -13,10 +13,15 @@ sh ~/dotfiles/fonts.sh
 #install dotfiles
 sh ~/dotfiles/install.sh
 
+# set up neovim
+mkdir ~/.config/nvim
+echo "set runtimepath+=~/.vim,~/.vim/after
+  set packpath+=~/.vim
+  source ~/.vimrc" > ~/.config/nvim/init.vim
+
 # Vim colorscheme
-cd ~/.vim
-mkdir colors
-cd colors
+mkdir ~/.vim/colors
+cd ~/.vim/colors
 wget https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom-dark-256.vim
 
 # Vim setup (seems to kill the script, so do it last)
