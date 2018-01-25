@@ -4,6 +4,16 @@
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
+# I like having this
+mkdir -p ~/tmp
+mkdir -p ~/bin
+
+# get the files in this repo
+sudo apt-get install -y git
+cd ~/tmp
+git clone https://github.com/drewboardman/ubuntuInstall.git
+cd ubuntuInstall
+
 # install packages
 /bin/bash packages.sh
 
@@ -14,10 +24,6 @@ sudo usermod -a -G audio,video,netdev $USER
 
 # This disables the need to enter password for sudo'ing
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
-
-# I like having this
-mkdir -p ~/tmp
-mkdir -p ~/bin
 
 # Hansolo
 cp hansolo.jpg ~/Downloads

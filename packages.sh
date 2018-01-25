@@ -59,3 +59,4 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install \
     arandr\
     feh \
     network-manager-openvpn-gnome \
+    neovim \

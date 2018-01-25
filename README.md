@@ -10,6 +10,9 @@ dd bs=512 if=path/to/ubuntu.iso of=/dev/sd? status=progress  # where ? is the us
 - Timezone New York
 
 ## Step 2
+- If you have an nvidia GPU, you'll need to [install the latest
+  drivers](http://www.linuxandubuntu.com/home/how-to-install-latest-nvidia-drivers-in-linux) before you install i3wm.
+
 - Configure system and install packages:
 
 ```bash
@@ -142,6 +145,33 @@ ln -s /run/resolvconf/resolv.conf /etc/resolv.conf
 ```
 up /etc/openvpn/update-resolv-conf
 down /etc/openvpn/update-resolv-conf
+```
+
+#### Screen brightness controls
+You're going to get errors about how xbacklight can't find inputs that allow brightness controls.
+
+You need to do 2 things:
+
+1. `sudo find /sys/ -type f -iname '*brightness*'`
+
+The output should give you something like this:
+
+`/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-LVDS-1/intel_backlight/brightness`
+
+symlink this
+
+`sudo ln -s /sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-LVDS-1/intel_backlight  /sys/class/backlight
+`
+
+2. Make `/etc/X11/xorg.conf` and inside put the following (where you path is replaced with the correct one):
+
+```
+Section "Device"
+  Identifier  "Card0"
+  Driver      "intel"
+  Option      "Backlight"  "/sys/class/backlight/intel_backlight"
+  EndSection
+>>>>>>> 9c41e499b91523cb6dc347ac03cde21bc057d6ae
 ```
 
 
