@@ -115,6 +115,36 @@ connection is.
 
 Under *General* just select the VPN proxy you configured.
 
+#### VPN issues with DNS
+1. Get `openvpn` with `sudo apt-get install openvpn`
+2. unzip `ovpn` files
+3. Copy the `yourName/**` files into `/etc/openvpn`
+4. Connect to the VPN
+
+```
+cd /etc/openvpn && sudo openvpn --config /etc/openvpn/YOURFILE.ovpn
+```
+
+**NOTE**
+There are issues with dns resolving sometimes.
+
+- Download `resolvconf` package.
+- backup current `resolv.conf` and symlink the `resolvconf` one in its place
+
+```
+cp /etc/resolv.conf ~/tmp
+sudo rm /etc/resolv.conf
+ln -s /run/resolvconf/resolv.conf /etc/resolv.conf
+```
+
+- Now add the following to your `/etc/openvpn/YOURFILE.ovpn`
+
+```
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf
+```
+
+
 #### TODO
 - intellij
 - scala
